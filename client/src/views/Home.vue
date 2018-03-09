@@ -2,16 +2,16 @@
 	<el-row class="container">
 		<el-col :span="24" class="header">
 			<el-col :span="10" class="logo" :class="collapsed?'logo-collapse-width':'logo-width'">
-				{{collapsed?'':sysName}}
+					<img src="../assets/a.jpg" alt="">				
 			</el-col>
 			<el-col :span="10">
-				<div class="tools" @click.prevent="collapse">
-					<i class="fa fa-align-justify"></i>
+				<div class="tools">
+					<span>内蒙古大学计算机学院奖助学金管理系统</span>
 				</div>
 			</el-col>
 			<el-col :span="4" class="userinfo">
 				<el-dropdown trigger="hover">
-					<span class="el-dropdown-link userinfo-inner"><img :src="this.sysUserAvatar" /> {{sysUserName}}</span>
+					<span class="el-dropdown-link userinfo-inner">{{name}}</span>
 					<el-dropdown-menu slot="dropdown">
 						<el-dropdown-item>我的消息</el-dropdown-item>
 						<el-dropdown-item>设置</el-dropdown-item>
@@ -75,6 +75,7 @@
 	export default {
 		data() {
 			return {
+				name:sessionStorage.getItem('username'),
 				sysName:'VUEADMIN',
 				collapsed:false,
 				sysUserName: '',
@@ -179,7 +180,7 @@
 				img {
 					width: 40px;
 					float: left;
-					margin: 10px 10px 10px 18px;
+					margin: 10px 10px 10px 65px;
 				}
 				.txt {
 					color:#fff;
@@ -193,7 +194,7 @@
 			}
 			.tools{
 				padding: 0px 23px;
-				width:14px;
+				width:600px;
 				height: 60px;
 				line-height: 60px;
 				cursor: pointer;
