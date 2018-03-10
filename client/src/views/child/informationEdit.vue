@@ -5,6 +5,7 @@
 		class="upload-demo"
 		action="https://jsonplaceholder.typicode.com/posts/"
 		:on-preview="handlePreview"
+		:before-upload="handleBefore"
 		:on-remove="handleRemove"
 		:file-list="fileList2"
 		list-type="picture">
@@ -117,12 +118,15 @@ export default {
 			const token = this.token
       userInfo({data,token}).then(res=>{
 				if(res.success)
-        this.$router.push({ path: '/page6' });
+        this.$router.push({ path: '/studentInformation' });
 			})
 	},
 	handleRemove(file, fileList) {
         console.log(file, fileList);
-      },
+			},
+			handleBefore(file){
+        console.log(file);				
+			},
       handlePreview(file) {
         console.log(file);
       }

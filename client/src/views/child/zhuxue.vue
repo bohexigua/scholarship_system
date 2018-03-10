@@ -4,7 +4,7 @@
     stripe
     style="width: 100%">
     <el-table-column
-      prop="name"
+      prop="title"
       label="信息通知"
       >
     </el-table-column>
@@ -14,7 +14,7 @@
       width="120">
       <template slot-scope="scope">
         <el-button
-          @click.native.prevent="deleteRow(scope.$index, tableData4)"
+          @click.native.prevent="deleteRow(scope.$index, tableData)"
           type="text"
           size="small">
 			详情
@@ -25,16 +25,27 @@
 </template>
 
 <script>
+import { getInform } from "../../api/api";
   export default {
+    beforeMount() {
+    const token = sessionStorage.getItem("token");
+    const type = 2;
+    getInform({ token, type }).then(res => {
+      this.tableData = res.data;
+    });
+  },
     methods: {
       deleteRow(index, rows) {
-        rows.splice(index, 1);
-      }
-    },
+      this.$router.push({
+        path: "/studentJiangxuexiangqing",
+        query: { index: index, rows: rows }
+      });
+    }
+  },
     data() {
       return {
         tableData: [{
-          name:'jfklsadjfkdsal'
+          title:'jfklsadjfkdsal'
         }]
       }
     }

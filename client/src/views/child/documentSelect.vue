@@ -1,42 +1,32 @@
 <template>
 	<div class="content">
 			<p>姓名:{{this.data.name}}</p>
-			<p>生源地:{{this.data.sex}}</p>
-			<p>班级:{{this.data.borth}}</p>
-			<p>家庭人均年收入:{{this.data.id}}</p>
-			<p>家庭收入来源:{{this.data.mz}}</p>
-			<p>学生陈述认定理由:{{this.data.zzmm}}</p>
+			<p>生源地:{{this.data.syd}}</p>
+			<p>班级:{{this.data.class}}</p>
+			<p>家庭人均年收入:{{this.data.rjnsr}}</p>
+			<p>家庭收入来源:{{this.data.jtsrly}}</p>
+			<p>学生陈述认定理由:{{this.data.reason}}</p>
 		</div>
 </template>
 
 <script>
+import { getPovertyLevel } from '../../api/api';
 export default {
+  beforeMount(){
+    const token=sessionStorage.getItem('token');
+    getPovertyLevel({ token }).then(res=>{
+      this.data = res.data;
+    })
+  },
   data() {
     return {
       data: {
-        name: "haha",
-        sex: "nan",
-        borth: "1999-2-2",
-        id: "1111",
-        mz: "han",
-        zzmm: "dy",
-        start: "2011-1-3",
-        xy: "hjkasdfd",
-        zy: "hahaha",
-        grade: "2012",
-        class: "hahaha",
-        pkjddj: "jksaljkd",
-        tel: "1213789",
-        saddress: "ueiwhfjaklfjkdls",
-        faddress: "kflsajfklds",
-        ftel: "2890890",
-        jtsrly: "djkslajfkdls;a",
-        pjxfjd: 34.33,
-        tccj: 233,
-        jl: "fhjdsakhfjdskaf",
-        hzzz: "hdjkashfjdksa",
-        sqjly: "jdkafhjdska",
-        sqzly: "hfjdksahfjk"
+        name: "",
+        syd: "",
+        class:'hdjfka',
+        rjnsr: "1111",
+        jtsrly: "han",
+        reason: "dy"
       }
     };
   }

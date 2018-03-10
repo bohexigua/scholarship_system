@@ -64,7 +64,11 @@
                 sessionStorage.setItem('token', token);
                 sessionStorage.setItem('username',username);
                 if(admin === 3)
-                this.$router.push({ path: '/page6' });
+                this.$router.push({ path: '/student' });
+                if(admin === 2)
+                {
+                  console.log('hahaha')
+                  this.$router.push({path:'/teacher'})}
               }
             });
           } else {

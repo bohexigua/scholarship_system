@@ -22,3 +22,10 @@ let base = 'http://192.168.1.101:3000';
 export const requestLogin = params => { return $.post(`${base}/login`, params ).then(res => JSON.parse(res)); };
 export const userInfo = (params) => { return $.post(`${base}/setUserInfo`, params ).then(res => JSON.parse(res)); };
 export const getUserInfo = params => { return $.get(`${base}/getUserInfo`, params ).then(res => JSON.parse(res)); };
+export const setPovertyLevel = params => {return $.post(`${base}/setPovertyLevel`, params).then(res => JSON.parse(res));};
+export const getPovertyLevel = params => {return $.get(`${base}/getPovertyLevel`, params).then(res => JSON.parse(res));};
+export const getInform = params => {return $.get(`${base}/getInform`, params).then(res => JSON.parse(res));};
+export const getPovertyLevelAll = params => {return $.get(`${base}/getPovertyLevelAll`, params).then(res => JSON.parse(res));};
+export const setPovertyLevelDone = params => {return $.post(`${base}/setPovertyLevelDone`, params).then(res => JSON.parse(res));};
+export const setPovertyLevelSubmit = params => {return $.post(`${base}/setPovertyLevelSubmit`, params).then(res => JSON.parse(res));};
+

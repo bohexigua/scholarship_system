@@ -28,13 +28,13 @@
 			<p>申请助学金理由:{{this.data.sqzly}}</p>
 		</div>
     <div class="right">
-			<img src="../assets/user.png" alt="">
+			<img src="../../assets/user.png" alt="">
 		</div>
 	</div>
 </template>
 
 <script>
-import { getUserInfo } from '../api/api';
+import { getUserInfo } from '../../api/api';
 export default {
   beforeMount(){
     const token=sessionStorage.getItem('token');

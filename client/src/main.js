@@ -23,7 +23,6 @@ Vue.use(Vuex)
 const router = new VueRouter({
   routes
 })
-
 router.beforeEach((to, from, next) => {
   //NProgress.start();
   if (to.path == '/login') {
