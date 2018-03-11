@@ -6,6 +6,7 @@
 			<p>家庭人均年收入:{{this.data.rjnsr}}</p>
 			<p>家庭收入来源:{{this.data.jtsrly}}</p>
 			<p>学生陈述认定理由:{{this.data.reason}}</p>
+      <p>贫困等级:{{this.data.done}}</p>
 		</div>
 </template>
 
@@ -26,7 +27,8 @@ export default {
         class:'hdjfka',
         rjnsr: "1111",
         jtsrly: "han",
-        reason: "dy"
+        reason: "dy",
+        done:''
       }
     };
   }

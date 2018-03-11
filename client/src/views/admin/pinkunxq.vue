@@ -18,16 +18,14 @@
       </template>
     </el-table-column>
   </el-table>
-        <el-button type="primary" @click="onSubmit">提交</el-button>
-  
     </div>
 </template>
 
 <script>
-import { setPovertyLevelSubmit } from "../../api/api";
+import { setAwardSubmit } from "../../api/api";
 export default {
   beforeMount() {
-    this.tableData = this.$route.query.tableData;
+    this.tableData = this.$route.query.form;
   },
   methods: {
     data() {
@@ -39,17 +37,6 @@ export default {
         ],
         done: "待处理"
       };
-    }
-  },
-   methods: {
-    onSubmit() {
-      const token = sessionStorage.getItem("token");
-      setPovertyLevelSubmit({ token }).then(res => {
-        if (res.success) {
-            alert('提交成功')
-            this.$router.push({ path: "/teacherDocumentSh" })
-        };
-      });
     }
   }
 };

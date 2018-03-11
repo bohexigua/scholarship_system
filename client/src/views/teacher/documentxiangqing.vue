@@ -6,8 +6,10 @@
 			<p>家庭收入来源:{{this.data.jtsrly}}</p>
 			<p>人均年收入:{{this.data.rjnsr}}</p>                                              
 			<p>学生陈述认定理由:{{this.data.reason}}</p>  
-            <el-button type="primary" v-if="this.data.done === '未处理'" @click="onSubmit('不同意')">不同意</el-button>            
-            <el-button type="primary" v-if="this.data.done === '未处理'" @click="onSubmit('同意')">同意</el-button>
+            <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('不同意')">不同意</el-button>
+            <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('一等')">一等</el-button>
+            <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('二等')">二等</el-button>
+            <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('三等')">三等</el-button>
 		</div>
 </template>
 

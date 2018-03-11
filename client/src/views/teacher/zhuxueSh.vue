@@ -18,7 +18,7 @@
           @click.native.prevent="deleteRow(scope.$index, tableData)"
           type="text"
           size="small">
-          {{tableData[scope.$index].done}}
+          {{tableData[scope.$index].result}}
         </el-button>
       </template>
     </el-table-column>
@@ -30,25 +30,25 @@
 </template>
 
 <script>
-import { getPovertyLevelClassAll } from "../../api/api";
+import { getGrant } from "../../api/api";
 export default {
   beforeMount() {
     const token = sessionStorage.getItem("token");
-    getPovertyLevelClassAll({ token }).then(res => {
+    getGrant({ token }).then(res => {
       this.tableData = res.data;
     });
   },
   methods: {
     deleteRow(index, rows) {
       this.$router.push({
-        path: "/teacherDocumentxiangqing",
+        path: "/teacherZhuxuexiangqingSh",
         query: { index: index, rows: rows }
       });
     },
     onSubmit(){
         this.$router.push({
-        path: "/teacherSubmit",
-        query: { tableData: this.tableData.filter(item => {return (item.done === '同意' ||  item.done === '不同意')}) }
+        path: "/teacherZhuxueSubmit",
+        query: { tableData: this.tableData.filter(item => {return (item.result !== '未处理' || item.result !== '不同意')}) }        
       });
     }
   },

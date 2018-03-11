@@ -48,8 +48,6 @@
 			<el-input v-model="form.grade"></el-input>
 		</el-form-item><el-form-item label="班级">
 			<el-input v-model="form.class"></el-input>
-		</el-form-item><el-form-item label="贫困建档等级">
-			<el-input v-model="form.pkjddj"></el-input>
 		</el-form-item><el-form-item label="联系电话">
 			<el-input v-model="form.tel"></el-input>
 		</el-form-item><el-form-item label="曾获何种奖励">
@@ -97,7 +95,6 @@ export default {
         zy: "hahaha",
         grade: "2012",
         class: "hahaha",
-        pkjddj: "jksaljkd",
         tel: "1213789",
         saddress: "ueiwhfjaklfjkdls",
         faddress: "kflsajfklds",

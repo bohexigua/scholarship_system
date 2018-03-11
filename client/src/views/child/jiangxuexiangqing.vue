@@ -4,16 +4,16 @@
 			<p>金额:{{this.data.award}}</p>
 			<p>要求分数:{{this.data.grade}}</p>
 			<p>其他:{{this.data.content}}</p>
-			<el-button type="primary">点击申请</el-button>
+			<el-button type="primary" @click="onSubmit">点击申请</el-button>
 		</div>
 </template>
 
 <script>
-import { getInform } from "../../api/api";
+import { applyAward } from "../../api/api";
 export default {
   beforeMount() {
-	  const index = this.$route.query.index;
-	this.data = this.$route.query.rows[index];
+    const index = this.$route.query.index;
+    this.data = this.$route.query.rows[index];
   },
   data() {
     return {
@@ -21,9 +21,18 @@ export default {
         award: "",
         content: "",
         grade: "",
-        titlt: "",
+        titlt: ""
       }
     };
+  },
+  methods: {
+    onSubmit() {
+      const data = {id:this.data.id}
+      const token = sessionStorage.getItem("token");
+      applyAward({ data, token }).then(res => {
+        if (res.success) this.$router.push({ path: "/studentInformation" });
+      });
+    }
   }
 };
 </script>

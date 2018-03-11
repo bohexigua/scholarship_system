@@ -12,6 +12,19 @@ import zhuxuexiangqing from './views/child/zhuxuexiangqing.vue'
 import documentSh from './views/teacher/documentSh.vue'
 import documentxiangqing from './views/teacher/documentxiangqing.vue'
 import submit from './views/teacher/submit.vue'
+import jiangxuejinSh from './views/teacher/jiangxuejinSh.vue'
+import jiangxuejinSubmit from './views/teacher/jiangxuejinSubmit.vue'
+import jiangxuejinxiangqingSh from './views/teacher/jiangxuejinxiangqingSh.vue'
+import zhuxueSh from './views/teacher/zhuxueSh.vue'
+import zhuxueSubmit from './views/teacher/zhuxueSubmit.vue'
+import zhuxuexiangqingSh from './views/teacher/zhuxuexiangqingSh.vue'
+import xuesheng from './views/admin/xuesheng.vue'
+import creatJiangxue from './views/admin/createJiangxue.vue'
+import pinkuntongji from './views/admin/pinkuntongji.vue'
+import pinkunxq from './views/admin/pinkunxq.vue'
+import jiangxuexq from './views/admin/jiangxuexq.vue'
+import jiangxuetongji from './views/admin/jiangxuetongji.vue'
+
 let routes = [
     {
         path: '/login',
@@ -70,12 +83,36 @@ let routes = [
     {
         path: '/teacher',
         component: Home,
-        name: '贫困建档信息',
+        name: '教师审批',
         iconCls: 'fa fa-id-card-o',
         children: [
             { path: '/teacherDocumentSh', component: documentSh, name: '贫困建档审核' },
             { path: '/teacherDocumentxiangqing', component: documentxiangqing, name: '完善贫困建档信息', hidden: true },
-            { path: '/teacherSubmit', component: submit, name: '完善贫困建档信息', hidden: true }
+            { path: '/teacherJiangxuejinSh', component: jiangxuejinSh, name: '奖学金审批' },
+            { path: '/teacherJiangxuejinSubmit', component: jiangxuejinSubmit, name: '提交奖学金', hidden: true },
+            { path: '/teacherJiangxuejinxiangqingSh', component: jiangxuejinxiangqingSh, name: '奖学金详情', hidden: true },
+            { path: '/teacherSubmit', component: submit, name: '完善贫困建档信息', hidden: true },
+            { path: '/teacherZhuxueSh', component: zhuxueSh, name: '助学金审批' },
+            { path: '/teacherZhuxueSubmit', component: zhuxueSubmit, name: '提交助学金', hidden: true },
+            { path: '/teacherZhuxuexiangqingSh', component: zhuxuexiangqingSh, name: '助学金详情', hidden: true }
+        
+        ]
+    },
+    {
+        path: '/admin',
+        component: Home,
+        name: '管理员列表',
+        iconCls: 'fa fa-id-card-o',
+        children: [
+            { path: '/adminxuesheng', component: xuesheng, name: '录入新生学号信息' },
+            { path: '/admincreatJiangxue', component: creatJiangxue, name: '发布奖／助学金'},
+            { path: '/adminpinkuntongji', component: pinkuntongji, name: '贫困建档统计' },
+            { path: '/adminpinkunxq', component: pinkunxq, name: '提交奖学金', hidden: true },
+            { path: '/adminjiangxuexq', component: jiangxuexq, name: '奖学金详情', hidden: true },
+            { path: '/adminjiangxuetongji', component: jiangxuetongji, name: '奖学金统计'},
+            // { path: '/teacherZhuxueSh', component: zhuxueSh, name: '助学金审批' },
+            // { path: '/teacherZhuxueSubmit', component: zhuxueSubmit, name: '提交助学金', hidden: true },
+            // { path: '/teacherZhuxuexiangqingSh', component: zhuxuexiangqingSh, name: '助学金详情', hidden: true }
         
         ]
     },

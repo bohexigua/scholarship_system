@@ -14,7 +14,7 @@
       label="结果"
       width="120">
       <template slot-scope="scope">
-          {{tableData[scope.$index].done}}
+          {{tableData[scope.$index].result}}
       </template>
     </el-table-column>
   </el-table>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { setPovertyLevelSubmit } from "../../api/api";
+import { setAwardSubmit } from "../../api/api";
 export default {
   beforeMount() {
     this.tableData = this.$route.query.tableData;
@@ -44,10 +44,10 @@ export default {
    methods: {
     onSubmit() {
       const token = sessionStorage.getItem("token");
-      setPovertyLevelSubmit({ token }).then(res => {
+      setAwardSubmit({ token }).then(res => {
         if (res.success) {
             alert('提交成功')
-            this.$router.push({ path: "/teacherDocumentSh" })
+            this.$router.push({ path: "/teacherJiangxuejinSh" })
         };
       });
     }
