@@ -48,7 +48,7 @@ export default {
     onSubmit(){
         this.$router.push({
         path: "/teacherZhuxueSubmit",
-        query: { tableData: this.tableData.filter(item => {return (item.result !== '未处理' || item.result !== '不同意')}) }        
+        query: { tableData: this.tableData.filter(item => {return (item.result !== '未处理' && item.result !== '不同意')}) }        
       });
     }
   },

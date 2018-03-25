@@ -115,7 +115,10 @@ export default {
 			const token = this.token
       userInfo({data,token}).then(res=>{
 				if(res.success)
-        this.$router.push({ path: '/studentInformation' });
+        {
+					alert('提交成功');
+					this.$router.push({ path: '/studentInformation' });
+					}
 			})
 	},
 	handleRemove(file, fileList) {

@@ -1,6 +1,6 @@
 <template>
 	<div>
-        <el-table
+  <el-table
     :data="tableData"
     stripe
     style="width: 100%">
@@ -48,7 +48,7 @@ export default {
     onSubmit(){
         this.$router.push({
         path: "/teacherJiangxuejinSubmit",
-        query: { tableData: this.tableData.filter(item => {return (item.result !== '未处理' || item.result !== '不同意')}) }
+        query: { tableData: this.tableData.filter(item => {return (item.result !== '未处理' && item.result !== '不同意')}) }
       });
     }
   },

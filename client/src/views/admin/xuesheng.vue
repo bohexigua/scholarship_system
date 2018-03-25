@@ -8,7 +8,7 @@
       <el-option label="学生" value='3'></el-option>
     </el-select>
   </el-form-item>
-		<el-form-item label="用户名">
+		<el-form-item label="学号">
 			<el-input v-model="form.userName"></el-input>
 		</el-form-item>
     <el-form-item label="班级">

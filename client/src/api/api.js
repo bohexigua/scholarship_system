@@ -17,7 +17,7 @@ import $ from 'jquery'
 
 // export const addUser = params => { return axios.get(`${base}/user/add`, { params: params }); };
 
-let base = 'http://192.168.1.106:3000';
+let base = 'http://192.168.1.101:3000';
 
 export const requestLogin = params => { return $.post(`${base}/login`, params ).then(res => JSON.parse(res)); };
 export const userInfo = (params) => { return $.post(`${base}/setUserInfo`, params ).then(res => JSON.parse(res)); };
