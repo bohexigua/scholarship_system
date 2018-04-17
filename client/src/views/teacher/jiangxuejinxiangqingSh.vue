@@ -24,37 +24,7 @@ export default {
     return {
       token: sessionStorage.getItem("token"),
       data: {
-        award: "3000",
-        brithday: "1999-2-2",
-        class: "hahaha",
-        content: "每个年级10个名额",
-        done: "未处理",
-        faddress: "kflsajfklds",
-        ftel: "2890890",
-        grade: "2012",
-        hzzz: "hdjkashfjdksa",
-        id: "1111",
-        inform_id: 95,
-        jl: "fhjdsakhfjdskaf",
-        jtsrly: "djkslajfkdls;a",
-        mz: "han",
-        name: "haha",
-        pjxfjd: "34.33",
-        poverty_level: "1",
-        saddress: "ueiwhfjaklfjkdls",
-        sex: "nan",
-        sqjly: "jdkafhjdska",
-        sqzly: "hfjdksahfjk",
-        start: "2011-1-3",
-        submit: 1,
-        tccj: "233",
-        tel: "1213789",
-        title: "勤奋奖学金1",
-        type: 1,
-        user_name: 123,
-        xy: "hjkasdfd",
-        zy: "hahaha",
-        zzmm: "dy"
+       
       }
     };
   },

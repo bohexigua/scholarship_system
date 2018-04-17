@@ -2,7 +2,7 @@
 	<div class="content">
 			<p>名称:{{this.data.title}}</p>
 			<p>金额:{{this.data.award}}</p>
-			<p>要求分数:{{this.data.grade}}</p>
+			<p>要求平均绩点:{{this.data.grade}}</p>
 			<p>其他:{{this.data.content}}</p>
 			<el-button type="primary" @click="onSubmit">点击申请</el-button>
 		</div>
@@ -17,12 +17,7 @@ export default {
   },
   data() {
     return {
-      data: {
-        award: "",
-        content: "",
-        grade: "",
-        titlt: ""
-      }
+      data: {}
     };
   },
   methods: {
@@ -30,7 +25,9 @@ export default {
       const data = {id:this.data.id}
       const token = sessionStorage.getItem("token");
       applyAward({ data, token }).then(res => {
-        if (res.success) this.$router.push({ path: "/studentInformation" });
+        if (res.success) {
+          alert('申请成功');
+          this.$router.push({ path: "/studentInformation" });}
       });
     }
   }

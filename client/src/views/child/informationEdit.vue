@@ -1,17 +1,6 @@
 <template>
 
 <div>
-	<el-upload
-		class="upload-demo"
-		action="https://jsonplaceholder.typicode.com/posts/"
-		:on-preview="handlePreview"
-		:before-upload="handleBefore"
-		:on-remove="handleRemove"
-		:file-list="fileList2"
-		list-type="picture">
-		<el-button size="small" type="primary">点击上传证件照</el-button>
-		<div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-	</el-upload>
 	<el-form ref="form" :model="form" label-width="80px">
 		<el-form-item label="姓名">
 			<el-input v-model="form.name"></el-input>
@@ -84,28 +73,7 @@ export default {
 			fileList2: [],
 			token:sessionStorage.getItem('token'),
       form: {
-        name: "haha",
-        sex: "nan",
-        brithday: "1999-2-2",
-        id: "1111",
-        mz: "han",
-        zzmm: "dy",
-        start: "2011-1-3",
-        xy: "hjkasdfd",
-        zy: "hahaha",
-        grade: "2012",
-        class: "hahaha",
-        tel: "1213789",
-        saddress: "ueiwhfjaklfjkdls",
-        faddress: "kflsajfklds",
-        ftel: "2890890",
-        jtsrly: "djkslajfkdls;a",
-        pjxfjd: 34.33,
-        tccj: 233,
-        jl: "fhjdsakhfjdskaf",
-        hzzz: "hdjkashfjdksa",
-        sqjly: "jdkafhjdska",
-        sqzly: "hfjdksahfjk"
+       
       }
     };
   },
@@ -115,7 +83,10 @@ export default {
 			const token = this.token
       userInfo({data,token}).then(res=>{
 				if(res.success)
-        this.$router.push({ path: '/studentInformation' });
+        {
+					alert('提交成功');
+					this.$router.push({ path: '/studentInformation' });
+					}
 			})
 	},
 	handleRemove(file, fileList) {

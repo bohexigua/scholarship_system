@@ -14,7 +14,7 @@
         <el-form-item label="金额">
 			<el-input v-model="form.award"></el-input>
 		</el-form-item>
-        <el-form-item label="要求分数">
+        <el-form-item label="要求平均绩点">
 			<el-input v-model="form.grade"></el-input>
 		</el-form-item><el-form-item label="其他">
 			<el-input v-model="form.content"></el-input>

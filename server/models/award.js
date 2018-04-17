@@ -3,7 +3,7 @@ let client = require("./mysql");
 let applyAward = async (data, userName) => {
   await client.startTransaction();
   const res = await client.executeTransaction(
-    "INSERT INTO award (id, inform_id, user_name) VALUES (null, ?, ?)", 
+    "INSERT INTO award (aid, inform_id, user_name) VALUES (null, ?, ?)", 
     [data.id, userName]);
   await client.stopTransaction();
   return res;

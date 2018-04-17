@@ -7,9 +7,9 @@
 			<p>人均年收入:{{this.data.rjnsr}}</p>                                              
 			<p>学生陈述认定理由:{{this.data.reason}}</p>  
             <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('不同意')">不同意</el-button>
-            <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('一等')">一等</el-button>
-            <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('二等')">二等</el-button>
-            <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('三等')">三等</el-button>
+            <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('一般困难')">一般困难</el-button>
+            <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('困难')">困难</el-button>
+            <el-button type="primary" v-if="this.data.done !== '已处理'" @click="onSubmit('特殊困难')">特殊困难</el-button>
 		</div>
 </template>
 
@@ -24,15 +24,6 @@ export default {
     return {
       token: sessionStorage.getItem("token"),
       data: {
-        class: "jhahah",
-        done: "未处理",
-        jtsrly: "han",
-        name: "haha",
-        reason: "dy",
-        rjnsr: "1111",
-        submit: 0,
-        syd: "nan",
-        user_name: 123
       }
     };
   },

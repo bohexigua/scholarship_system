@@ -41,15 +41,15 @@ import { setPovertyLevel } from "../../api/api";
 export default {
   data() {
     return {
-      token:sessionStorage.getItem('token'),
+      token: sessionStorage.getItem("token"),
       fileList2: [],
       form: {
-        name: "haha",
-        class: "jhahah",
-        syd: "nan",
-        rjnsr: "1111",
-        jtsrly: "han",
-        reason: "dy"
+        name: "",
+        class: "",
+        syd: "",
+        rjnsr: "",
+        jtsrly: "",
+        reason: ""
       }
     };
   },
@@ -58,7 +58,10 @@ export default {
       const data = this.form;
       const token = this.token;
       setPovertyLevel({ data, token }).then(res => {
-        if (res.success) this.$router.push({ path: "/studentDocumentSelect" });
+        if (res.success) {
+          alert("提交成功");
+          this.$router.push({ path: "/studentDocumentSelect" });
+        }
       });
     },
     handleRemove(file, fileList) {

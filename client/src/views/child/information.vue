@@ -27,9 +27,6 @@
 			<p>申请奖学金理由:{{this.data.sqjly}}</p>
 			<p>申请助学金理由:{{this.data.sqzly}}</p>
 		</div>
-    <div class="right">
-			<img src="../../assets/user.png" alt="">
-		</div>
 	</div>
 </template>
 

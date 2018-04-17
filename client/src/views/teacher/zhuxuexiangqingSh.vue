@@ -24,15 +24,6 @@ export default {
     return {
       token: sessionStorage.getItem("token"),
       data: {
-        class: "jhahah",
-        done: "未处理",
-        jtsrly: "han",
-        name: "haha",
-        reason: "dy",
-        rjnsr: "1111",
-        submit: 0,
-        syd: "nan",
-        user_name: 123
       }
     };
   },

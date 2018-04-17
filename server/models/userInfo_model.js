@@ -6,7 +6,7 @@ let setUserInfo = async (data, userName) => {
     "INSERT INTO user_info(user_name, name, sex, brithday, \
       id, mz, zzmm, saddress, faddress, ftel, jtsrly, pjxfjd, tccj, \
       start, xy, zy, grade, class, tel, jl, hzzz, sqjly, sqzly) \
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", 
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", 
     [userName, data.name, data.sex, data.brithday, data.id, data.mz, data.zzmm, data.saddress,
      data.faddress, data.ftel, data.jtsrly, data.pjxfjd, data.tccj, data.start, data.xy, data.zy,
      data.grade, data.class, data.tel, data.jl, data.hzzz, data.sqjly, data.sqzly]);
