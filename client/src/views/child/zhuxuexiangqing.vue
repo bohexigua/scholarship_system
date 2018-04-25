@@ -21,12 +21,15 @@ export default {
     };
   },methods: {
     onSubmit() {
-      const data = {id:this.data.id}
+      const data = {id:this.data.id, grade:this.data.grade};
       const token = sessionStorage.getItem("token");
       applyAward({ data, token }).then(res => {
         if (res.success) {
           alert('申请成功');
-          this.$router.push({ path: "/studentInformation" });}
+          this.$router.push({ path: "/studentInformation" });
+        } else {
+          alert(res.reason);
+        }
       });
     }
   }

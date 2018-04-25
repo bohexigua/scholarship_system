@@ -55,11 +55,11 @@ export default {
       });
     },
     onChange(){
-    const token = sessionStorage.getItem("token");        
-        const type = this.value;
-        getInform({ token,type }).then(res => {
-      this.tableData = res.data;
-    });
+      const token = sessionStorage.getItem("token");        
+      const type = this.value;
+      getInform({ token,type }).then(res => {
+        this.tableData = res.data;
+      });
     }
   },
   data() {

@@ -18,7 +18,15 @@ let getInform = async (type) => {
   return res;
 }
 
+let getInformById = async (id) => {
+  await client.startTransaction();
+  const res = await client.executeTransaction("SELECT * FROM `inform` WHERE id = ?;", [id]);
+  await client.stopTransaction();
+  return res;
+}
+
 module.exports = {
   setInform: setInform,
-  getInform: getInform
+  getInform: getInform,
+  getInformById: getInformById
 }

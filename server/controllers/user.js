@@ -213,6 +213,9 @@ let applyAward = async (ctx, next) => {
   console.log(data, session, '....');
   const res = await award.applyAward(data, session.userName);
   var result = { success: true };
+  if (!res.success) {
+    result = { success: false, reason: res.reason };
+  }
   ctx.response.body = JSON.stringify(result);
 }
 

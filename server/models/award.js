@@ -2,11 +2,24 @@ let client = require("./mysql");
 
 let applyAward = async (data, userName) => {
   await client.startTransaction();
-  const res = await client.executeTransaction(
-    "INSERT INTO award (aid, inform_id, user_name) VALUES (null, ?, ?)", 
-    [data.id, userName]);
-  await client.stopTransaction();
-  return res;
+  const informRes = await client.executeTransaction("SELECT * FROM `inform` WHERE id = ?;", [data.id]);
+  const grade = informRes[0].grade;
+  const userRes = await client.executeTransaction("SELECT * FROM `poverty_level` WHERE user_name = ?;", [userName]);
+  if (userRes[0].done === '未处理') {
+    await client.stopTransaction();
+    return { reason: '你的贫困档案尚未审核通过！' };
+  }
+  else if (parseFloat(grade) > parseFloat(data.grade)) {
+    await client.stopTransaction();
+    return { reason: '你的平均绩点未达到要求！' };
+  }
+  else {
+    const res = await client.executeTransaction(
+      "INSERT INTO award (aid, inform_id, user_name) VALUES (null, ?, ?)", 
+      [data.id, userName]);
+    await client.stopTransaction();
+    return res;
+  }
 }
 
 let getAward = async (_class) => {      // 奖学金

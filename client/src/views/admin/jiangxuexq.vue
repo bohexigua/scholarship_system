@@ -28,7 +28,7 @@ export default {
     const id = this.$route.query.id
     const token = sessionStorage.getItem("token");    
     getAwardUserInfo({id,token}).then(res => {
-      this.tableData = res.data;
+      this.tableData = res.data.filter(item => item.result !== '未处理');
     })
   },
     data() {
